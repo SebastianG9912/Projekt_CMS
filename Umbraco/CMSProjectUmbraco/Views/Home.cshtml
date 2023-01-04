@@ -1,0 +1,12 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+<div>
+    <h1>@Model.Value("homeHeader")</h1>
+    <p>@Model.Value("homeText")</p>
+</div>
+@await Html.PartialAsync("ActivityAdvisor")

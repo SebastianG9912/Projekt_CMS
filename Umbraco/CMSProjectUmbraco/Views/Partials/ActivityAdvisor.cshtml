@@ -1,0 +1,24 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using CMSProjectUmbraco.ActivityAdvisor;
+
+@{
+    var data = await ActivityAdvisorClient.GetActivityAdvisorAsync();
+}
+
+@if (data == null)
+{
+    <div></div>
+}
+else
+{
+    <div class="card">
+        <h3>Activity</h3>
+        <h5>@data.activity</h5>
+        <p>Type: @data.type</p>
+        <p>Number of participants: @data.participants</p>
+        @if (data.link != "")
+        {
+            <a href="@data.link">Link to activity</a>
+        }
+    </div>
+}

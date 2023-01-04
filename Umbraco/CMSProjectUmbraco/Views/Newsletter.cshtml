@@ -1,0 +1,9 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Newsletter>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+@Model.Value("newsletterTitle")
+@await Html.PartialAsync("NewsletterPartial", new CMSProjectUmbraco.NewsletterDTO())
+@* @await Component.InvokeAsync("Newsletters") *@
