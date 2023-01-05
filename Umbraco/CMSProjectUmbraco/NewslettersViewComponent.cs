@@ -6,12 +6,12 @@ using NPoco;
 
 namespace CMSProjectUmbraco.Newsletters
 {
-    public class NewsletterViewComponent : ViewComponent
+    public class NewslettersViewComponent : ViewComponent
     {
 
         private IScopeProvider _scopeProvider;
 
-        public NewsletterViewComponent(IScopeProvider scopeProvider)
+        public NewslettersViewComponent(IScopeProvider scopeProvider)
         {
             this._scopeProvider = scopeProvider;
         }
@@ -21,7 +21,7 @@ namespace CMSProjectUmbraco.Newsletters
 
             using (var scope = _scopeProvider.CreateScope())
             {
-                var query = new Sql().Select("*").From("Newsletters");
+                var query = new Sql().Select("*").From("Newsletter");
 
                 var result = scope.Database.Fetch<CMSProjectUmbraco.AddCommentsTable.Newsletterchema>(query);
 
