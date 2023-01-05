@@ -7,6 +7,7 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Infrastructure.Persistence;
 using Umbraco.Cms.Web.Website.Controllers;
 using Umbraco.Cms.Infrastructure.Scoping;
+using NPoco;
 
 namespace CMSProjectUmbraco
 {
@@ -33,16 +34,34 @@ namespace CMSProjectUmbraco
 
         public IActionResult newsletterSubmit(NewsletterDTO formData)
         {
+            var notSignedUp = true;
+
             using (var scope = _scopeProvider.CreateScope())
             {
-                var data = new CMSProjectUmbraco.AddCommentsTable.Newsletterchema();
-                data.Email = formData.Email;
-                scope.Database.Insert(data);
+                var query = new Sql().Select("*").From("Newsletter").Where("Email == (@n)", new { n = formData.Email });
+
+                var result = scope.Database.Fetch<CMSProjectUmbraco.AddCommentsTable.Newsletterchema>(query);
+
+                if (result.Count > 0)
+                {
+                    TempData["Newsletter"] = "You are already signed up for the newsletter";
+                    notSignedUp = false;
+                }
                 scope.Complete();
-                ViewBag.Newsletter = "You have signed up for the newsletter!";
             }
 
-            ViewBag.Newsletter = "You are already signed up for the newsletter";
+            if (notSignedUp)
+            {
+                using (var scope = _scopeProvider.CreateScope())
+                {
+                    var data = new CMSProjectUmbraco.AddCommentsTable.Newsletterchema();
+                    data.Email = formData.Email;
+                    scope.Database.Insert(data);
+                    scope.Complete();
+                    TempData["Newsletter"] = "You have signed up for the newsletter!";
+                }
+            }
+
             return RedirectToCurrentUmbracoPage();
         }
     }
