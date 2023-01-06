@@ -7,15 +7,19 @@
 @using System.ComponentModel.DataAnnotations;
 @inject IConfiguration Configuration
 
-    <div>Form</div>
-    <EditForm Model=@newsArticleDTO OnSubmit="@SendArticle">
+<div class="card card-body" style="font-size:1.1em; width:fit-content; margin:auto; margin-top:20px; background-color:#cccccc">
+    <h2 class="card-title" style="font-size:x-large">Submit a new News Article</h2>
+    
+    <EditForm Model=@newsArticleDTO OnSubmit="@SendArticle" class="m-2" style="display:flex; flex-direction:column;">
         <label for="Title">Title</label>
         <InputText @bind-Value=newsArticleDTO.Title id="Title" />
         <label for="Text">Text</label>
-        <InputText @bind-Value=newsArticleDTO.Text id="Text" />
+        <InputTextArea @bind-Value=newsArticleDTO.Text id="Text" />
 
-        <input type="submit" value="Create News Article" />
+        <input type="submit" value="Create News Article" style="margin-top:10px"/>
     </EditForm>
+</div>
+    
 
 
 @code {
@@ -32,37 +36,6 @@
         var dto = new NewsArticleDTOData { Data = newsArticleDTO };
         await Http.PostAsJsonAsync<NewsArticleDTOData>(url, dto);
     }
-
-    
-
-    //protected override async Task OnInitializedAsync()
-    //{
-    //    strapi_api_url = Configuration["AppSettings:STRAPI_API_URL"];
-    //    var url = $"{strapi_api_url}/api/news-articles";
-
-    //    var jwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczMDE1NzM4LCJleHAiOjE2NzU2MDc3Mzh9.GPJ7X4J_sheTAL1MEvVCFVHeenQyhO7E3DBIJE9N6xg";
-    //    Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwt);
-    //    //allNewsArticles = await Http.GetFromJsonAsync<NewsArticles>(url);
-    //    //await Http.PostAsJsonAsync<NewsArticle>();
-    //    ////var request = (HttpWebRequest)WebRequest.Create(url);
-    //    ////request.ContentType = "application/json";
-    //    ////request.Method = "POST";
-    //    ////request.Headers["Authorization"] = $"Bearer {jwt}";
-
-    //    ////using (var writer = new StreamWriter(request.GetRequestStream()))
-    //    ////{
-    //    ////    string article = "{\"data\":{\"title\":\"Food production\", \"text\":\"Food production is picking up the pace worldwide.\"}}";
-    //    ////    writer.Write(article);
-    //    ////}
-    //    //var request = new HttpRequestMessage(HttpMethod.Post, url);
-        
-        
-    //    //////var dto = new NewsArticleDTOData { Data = new NewsArticleDTO { Title = "Food production", Text = "Food production is picking up the pace worldwide." } };
-    //    //////await Http.PostAsJsonAsync<NewsArticleDTOData>(url, dto);
-    //}
-    /*
-    {\"data\":{\"title\":\"Food production\", \"text\":\"Food production is picking up the pace worldwide.\"}}
-     */
 
     public class NewsArticleDTOData
     {

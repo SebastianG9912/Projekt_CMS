@@ -13,13 +13,13 @@ else
 {
     <section class="text-gray-600 body-font">
         <div class="container px-5 py-4 mx-auto">
-            <div class="flex flex-wrap -m-3">
+            <div class="flex flex-wrap">
                 @foreach (var article in allNewsArticles.data)
                 {
                     <div class="xl:w-1/4 md:w-1/2 p-4">
                         <div class="bg-gray-100 p-6 rounded-lg">
                             @foreach(var category in article.categories){
-                                <div>@category.Topic</div>
+                                <div class="card" style="width:fit-content; padding:3px; margin-bottom:5px;">@category.Topic</div>
                             }
                             @if(article.Image != null)
                             {
@@ -45,11 +45,7 @@ else
         strapi_api_url = Configuration["AppSettings:STRAPI_API_URL"];
         var url = $"{strapi_api_url}/api/news-articles?populate=*";
 
-
-        //allNewsArticles = await Http.GetFromJsonAsync<NewsArticles>(url);
-        ////var request = new HttpRequestMessage(HttpMethod.Get, url);
-        ////var jwt = "";
-        ////request.Headers.Add("Authorization", $"Bearer {jwt}");
+        //The jwt token used to validate if the user is allowed to fetch the content (all NewsArticles) from Strapi backend via api
         var jwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczMDE1NzM4LCJleHAiOjE2NzU2MDc3Mzh9.GPJ7X4J_sheTAL1MEvVCFVHeenQyhO7E3DBIJE9N6xg";
         Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwt);
         allNewsArticles = await Http.GetFromJsonAsync<NewsArticles>(url);
@@ -96,14 +92,3 @@ else
     }
 
 }
-
-@*@page "/"
-
-<PageTitle>Index</PageTitle>
-
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
-*@
