@@ -4,38 +4,62 @@
 @using Models
 @using System.Net.Http.Headers;
 @using System.Net;
+@using System.ComponentModel.DataAnnotations;
 @inject IConfiguration Configuration
 
-    <div>Form to be</div>
+    <div>Form</div>
+    <EditForm Model=@newsArticleDTO OnSubmit="@SendArticle">
+        <label for="Title">Title</label>
+        <InputText @bind-Value=newsArticleDTO.Title id="Title" />
+        <label for="Text">Text</label>
+        <InputText @bind-Value=newsArticleDTO.Text id="Text" />
 
+        <input type="submit" value="Create News Article" />
+    </EditForm>
 
 
 @code {
+    NewsArticleDTO newsArticleDTO = new NewsArticleDTO();
     public string strapi_api_url;
 
-    protected override async Task OnInitializedAsync()
+    public async Task SendArticle()
     {
         strapi_api_url = Configuration["AppSettings:STRAPI_API_URL"];
         var url = $"{strapi_api_url}/api/news-articles";
 
         var jwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczMDE1NzM4LCJleHAiOjE2NzU2MDc3Mzh9.GPJ7X4J_sheTAL1MEvVCFVHeenQyhO7E3DBIJE9N6xg";
         Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwt);
-        //allNewsArticles = await Http.GetFromJsonAsync<NewsArticles>(url);
-        //await Http.PostAsJsonAsync<NewsArticle>();
-        ////var request = (HttpWebRequest)WebRequest.Create(url);
-        ////request.ContentType = "application/json";
-        ////request.Method = "POST";
-        ////request.Headers["Authorization"] = $"Bearer {jwt}";
-
-        ////using (var writer = new StreamWriter(request.GetRequestStream()))
-        ////{
-        ////    string article = "{\"data\":{\"title\":\"Food production\", \"text\":\"Food production is picking up the pace worldwide.\"}}";
-        ////    writer.Write(article);
-        ////}
-        //var request = new HttpRequestMessage(HttpMethod.Post, url);
-        var dto = new NewsArticleDTOData { Data = new NewsArticleDTO { Title = "Food production", Text = "Food production is picking up the pace worldwide." } };
+        var dto = new NewsArticleDTOData { Data = newsArticleDTO };
         await Http.PostAsJsonAsync<NewsArticleDTOData>(url, dto);
     }
+
+    
+
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    strapi_api_url = Configuration["AppSettings:STRAPI_API_URL"];
+    //    var url = $"{strapi_api_url}/api/news-articles";
+
+    //    var jwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczMDE1NzM4LCJleHAiOjE2NzU2MDc3Mzh9.GPJ7X4J_sheTAL1MEvVCFVHeenQyhO7E3DBIJE9N6xg";
+    //    Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwt);
+    //    //allNewsArticles = await Http.GetFromJsonAsync<NewsArticles>(url);
+    //    //await Http.PostAsJsonAsync<NewsArticle>();
+    //    ////var request = (HttpWebRequest)WebRequest.Create(url);
+    //    ////request.ContentType = "application/json";
+    //    ////request.Method = "POST";
+    //    ////request.Headers["Authorization"] = $"Bearer {jwt}";
+
+    //    ////using (var writer = new StreamWriter(request.GetRequestStream()))
+    //    ////{
+    //    ////    string article = "{\"data\":{\"title\":\"Food production\", \"text\":\"Food production is picking up the pace worldwide.\"}}";
+    //    ////    writer.Write(article);
+    //    ////}
+    //    //var request = new HttpRequestMessage(HttpMethod.Post, url);
+        
+        
+    //    //////var dto = new NewsArticleDTOData { Data = new NewsArticleDTO { Title = "Food production", Text = "Food production is picking up the pace worldwide." } };
+    //    //////await Http.PostAsJsonAsync<NewsArticleDTOData>(url, dto);
+    //}
     /*
     {\"data\":{\"title\":\"Food production\", \"text\":\"Food production is picking up the pace worldwide.\"}}
      */
@@ -51,14 +75,3 @@
         public string Text { get; set; }
     }
 }
-
-@*@page "/"
-
-<PageTitle>Index</PageTitle>
-
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
-*@

@@ -200,13 +200,13 @@
       "mscorlib.dll": "sha256-UH9jptJH1wZ3XMBPuMMAEaUKpfRxc5AgXkLdAFAvNVE=",
       "netstandard.dll": "sha256-+jUzj0FB0YcoBUeSkSNEjhVDTG08qbZ2twfCBMbzT+Q=",
       "System.Private.CoreLib.dll": "sha256-l+\/quNqfNCSUDSMJcp0+IxlSdOdnAtwVVWMXmYGHMpg=",
-      "CMSProjectStrapiFrontend.dll": "sha256-XgoirPrN8rQZev0bU9R7c\/v6qE4qmChV\/EwtB+dsKYU="
+      "CMSProjectStrapiFrontend.dll": "sha256-g0O2+yJORDYPrB59EBZOMh4+lhTfG9U9RbHlM3PbyQM="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "CMSProjectStrapiFrontend.pdb": "sha256-\/bHuXGZKXeAk\/Ro3Yf8Y310VAYI2JNi\/t0sjh5vsaXI="
+      "CMSProjectStrapiFrontend.pdb": "sha256-ExXPgb42xARfVJKLYytSSqf\/8U\/uJFcjJnou\/V9B664="
     },
     "runtime": {
       "dotnet.7.0.1.75z5tmf9cc.js": "sha256-jjax3FMRXzFAziWowdtJf6vipP2xXAaA5gD6VBYB6Y0=",

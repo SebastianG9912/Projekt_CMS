@@ -18,5 +18,5 @@ Hemsidan skall ha:
 För VG:
 "Minst 1 st egen content-typ med text, bild & relation"(Newsarticle)
 "Minst 2 olika user-roller"(Subscriber och Author)
-Någon eget formulär för att tillåta publicering
+"Någon eget formulär för att tillåta publicering"(Kan publicera egen artikel)
 Tydligare motivering kring tekniska beslut och genomförande
