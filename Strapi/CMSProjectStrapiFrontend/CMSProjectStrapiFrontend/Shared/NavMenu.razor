@@ -1,4 +1,20 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿<header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
+            <img src="/Newspaper.png" alt="logo" style="height:60px" />
+            <span class="ml-3 text-3xl">News website</span>
+        </a>
+        <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+            News
+        </NavLink>
+        <NavLink class="nav-link" href="submit" Match="NavLinkMatch.All">
+            Submit
+        </NavLink>
+    </div>
+</header>
+
+
+@*<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">CMSProjectStrapiFrontend</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -36,4 +52,4 @@
     {
         collapseNavMenu = !collapseNavMenu;
     }
-}
+}*@

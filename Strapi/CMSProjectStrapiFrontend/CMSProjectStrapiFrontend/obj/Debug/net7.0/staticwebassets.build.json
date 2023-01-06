@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OyW/3eIvaGqqcfdDKJxyMkrK+FQbZ0sFpgDL8oohL6o=",
+  "Hash": "UGSukrjr4b4G0R071/u0XhOP6xFHpX3BaMhR+fhE6pM=",
   "Source": "CMSProjectStrapiFrontend",
   "BasePath": "/",
   "Mode": "Root",
@@ -6902,6 +6902,23 @@
       "OriginalItemSpec": "C:\\Users\\sebgu\\Desktop\\Projekt_CMS\\Strapi\\CMSProjectStrapiFrontend\\CMSProjectStrapiFrontend\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\CMSProjectStrapiFrontend.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\sebgu\\Desktop\\Projekt_CMS\\Strapi\\CMSProjectStrapiFrontend\\CMSProjectStrapiFrontend\\wwwroot\\appsettings.json",
+      "SourceId": "CMSProjectStrapiFrontend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sebgu\\Desktop\\Projekt_CMS\\Strapi\\CMSProjectStrapiFrontend\\CMSProjectStrapiFrontend\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "appsettings.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "settings",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\appsettings.json"
+    },
+    {
       "Identity": "C:\\Users\\sebgu\\Desktop\\Projekt_CMS\\Strapi\\CMSProjectStrapiFrontend\\CMSProjectStrapiFrontend\\wwwroot\\css\\app.css",
       "SourceId": "CMSProjectStrapiFrontend",
       "SourceType": "Discovered",
@@ -7155,6 +7172,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\sebgu\\Desktop\\Projekt_CMS\\Strapi\\CMSProjectStrapiFrontend\\CMSProjectStrapiFrontend\\wwwroot\\Newspaper.png",
+      "SourceId": "CMSProjectStrapiFrontend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sebgu\\Desktop\\Projekt_CMS\\Strapi\\CMSProjectStrapiFrontend\\CMSProjectStrapiFrontend\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "Newspaper.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Newspaper.png"
     },
     {
       "Identity": "C:\\Users\\sebgu\\Desktop\\Projekt_CMS\\Strapi\\CMSProjectStrapiFrontend\\CMSProjectStrapiFrontend\\wwwroot\\sample-data\\weather.json",
