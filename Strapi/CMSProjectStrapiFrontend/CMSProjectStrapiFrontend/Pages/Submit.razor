@@ -3,92 +3,53 @@
 @using Microsoft.Extensions.Configuration;
 @using Models
 @using System.Net.Http.Headers;
+@using System.Net;
 @inject IConfiguration Configuration
 
-@if (allNewsArticles == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    @*<section class="text-gray-600 body-font">
-        <div class="container px-5 py-4 mx-auto">
-            <div class="flex flex-wrap -m-3">
-                @foreach (var post in allNewsArticles.data)
-                {
-                    <div class="xl:w-1/4 md:w-1/2 p-4">
-                        <div class="bg-gray-100 p-6 rounded-lg">
-                            @foreach (var category in post.categories)
-                            {
-                                <div>@category.Topic</div>
-                            }
-                            <img class="h-40 rounded w-full object-cover object-center mb-6" src="@post.Image.Url" alt="content">
-
-                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">@post.Title</h2>
-                            <p>@post.Text</p>
-                        </div>
-                    </div>
-                }
-            </div>
-        </div>
-    </section>*@
     <div>Form to be</div>
-}
+
 
 
 @code {
-    private NewsArticles allNewsArticles = null;
     public string strapi_api_url;
 
     protected override async Task OnInitializedAsync()
     {
         strapi_api_url = Configuration["AppSettings:STRAPI_API_URL"];
-        var url = $"{strapi_api_url}/api/news-articles?populate=*";
+        var url = $"{strapi_api_url}/api/news-articles";
 
-
-        //allNewsArticles = await Http.GetFromJsonAsync<NewsArticles>(url);
-        ////var request = new HttpRequestMessage(HttpMethod.Get, url);
-        ////var jwt = "";
-        ////request.Headers.Add("Authorization", $"Bearer {jwt}");
         var jwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczMDE1NzM4LCJleHAiOjE2NzU2MDc3Mzh9.GPJ7X4J_sheTAL1MEvVCFVHeenQyhO7E3DBIJE9N6xg";
         Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwt);
-        allNewsArticles = await Http.GetFromJsonAsync<NewsArticles>(url);
+        //allNewsArticles = await Http.GetFromJsonAsync<NewsArticles>(url);
+        //await Http.PostAsJsonAsync<NewsArticle>();
+        ////var request = (HttpWebRequest)WebRequest.Create(url);
+        ////request.ContentType = "application/json";
+        ////request.Method = "POST";
+        ////request.Headers["Authorization"] = $"Bearer {jwt}";
 
-        if (allNewsArticles.data != null)
-        {
-            foreach (var post in allNewsArticles.data)
-            {
-                post.Image.Url = strapi_api_url + post.Image.Url;
-            }
-        }
+        ////using (var writer = new StreamWriter(request.GetRequestStream()))
+        ////{
+        ////    string article = "{\"data\":{\"title\":\"Food production\", \"text\":\"Food production is picking up the pace worldwide.\"}}";
+        ////    writer.Write(article);
+        ////}
+        //var request = new HttpRequestMessage(HttpMethod.Post, url);
+        var dto = new NewsArticleDTOData { Data = new NewsArticleDTO { Title = "Food production", Text = "Food production is picking up the pace worldwide." } };
+        await Http.PostAsJsonAsync<NewsArticleDTOData>(url, dto);
+    }
+    /*
+    {\"data\":{\"title\":\"Food production\", \"text\":\"Food production is picking up the pace worldwide.\"}}
+     */
+
+    public class NewsArticleDTOData
+    {
+        public NewsArticleDTO Data { get; set; }
     }
 
-    public class NewsArticle
+    public class NewsArticleDTO
     {
-        public int Id { get; set; }
         public string Title { get; set; }
         public string Text { get; set; }
-        public Image Image { get; set; }
-        public List<Category> categories { get; set; }
     }
-
-    public class Image
-    {
-        public string Url { get; set; }
-    }
-
-    public class Category
-    {
-        public int Id { get; set; }
-        public string Topic { get; set; }
-        public List<NewsArticle> news_articles { get; set; }
-    }
-
-    public class NewsArticles
-    {
-        public List<NewsArticle> data { get; set; }
-    }
-
 }
 
 @*@page "/"
