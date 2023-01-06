@@ -4,7 +4,8 @@
 @{
 	Layout = "Master.cshtml";
 }
-<h2>@Model.Value("newsletterTitle")</h2>
-
-<h4>@TempData["Newsletter"]</h4>
-@await Html.PartialAsync("NewsletterPartial", new CMSProjectUmbraco.NewsletterDTO())
+<h3 style="text-align:center; margin-top:20px;">@Model.Value("newsletterTitle")</h3>
+<div style="margin:auto; width:fit-content">
+	@await Html.PartialAsync("NewsletterPartial", new CMSProjectUmbraco.NewsletterDTO())
+	<h5>@TempData["Newsletter"]</h5>
+</div>

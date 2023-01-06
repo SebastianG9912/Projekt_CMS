@@ -2,13 +2,13 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.News>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
 }
 
-<div>
-    <h1>The News</h1>
+<div style="margin:auto; margin-top:20px; width:fit-content">
+    <h1>Todays Article</h1>
 </div>
-<div>
+<div class="card news-card">
     <h2>@Model.Value("articleTitle")</h2>
     <p>@Model.Value("articleText")</p>
 </div>

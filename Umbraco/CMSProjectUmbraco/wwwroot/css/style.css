@@ -1,4 +1,65 @@
+header{
+    border-bottom: 1px solid grey;
+    padding: 0;
+}
+
 .logo{
-    width: 50px;
-    height: 50px;
+    width: 100px;
+} 
+
+.header-links{
+    list-style: none;
+    
+}
+
+.header-links > *{
+    margin: 10px;
+    
+}
+
+.header-links a{
+    margin: 10px;
+    text-decoration: none;
+}
+
+.activity-card{
+    width: fit-content;
+    padding: 5px;
+}
+
+.home-descriptions{
+    margin:auto; 
+    margin-top: 10px; 
+    width:fit-content; 
+    font-size:1.4em
+}
+
+.home-descriptions h1{
+    margin: auto;
+    text-align: center;
+}
+
+.news-card{
+    width:fit-content;
+    max-width: 500px;
+    margin:auto;
+    padding:25px;
+    border: 5px groove rgb(167, 167, 167) !important;
+    font-size: 1.4em;
+}
+
+.news-card h2{
+    text-align: center;
+}
+
+.card-newsletter{
+    padding: 10px;
+}
+
+#newsButton{
+    width:100%;
+    justify-self: center;
+    margin-top: 5px;
+    border: 1px solid rgb(73, 73, 73);
+    border-radius: 5px;
 }

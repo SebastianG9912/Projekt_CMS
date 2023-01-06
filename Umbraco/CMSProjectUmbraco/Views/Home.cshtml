@@ -2,10 +2,10 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
 }
 
-<div>
+<div class="home-descriptions">
     <h1>@Model.Value("homeHeader")</h1>
     <p>@Model.Value("homeText")</p>
 </div>

@@ -1,10 +1,11 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<CMSProjectUmbraco.NewsletterDTO>
-
-<h2>Use this form to sign up for our newsletter</h2>
-@using (Html.BeginUmbracoForm("newsletterSubmit", "NewsletterSurface"))
-{
-    <label for="Email">Please enter your e-mail</label>
-    <input type="email" asp-for="Email" />
-    <br />
-    <input type="submit" value="Skicka" />
-}
+<div class="card card-newsletter">
+    <h4>Sign this form</h4>
+    @using (Html.BeginUmbracoForm("newsletterSubmit", "NewsletterSurface"))
+    {
+        <label for="Email">Please enter your e-mail:</label>
+        <input type="email" asp-for="Email" />
+        <br />
+        <input id="newsButton" type="submit" value="Register" />
+    }
+</div>
