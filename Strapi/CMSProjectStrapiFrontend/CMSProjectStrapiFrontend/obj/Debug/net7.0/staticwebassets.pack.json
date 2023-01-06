@@ -69,14 +69,6 @@
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Id": "C:\\Users\\sebgu\\Desktop\\Projekt_CMS\\Strapi\\CMSProjectStrapiFrontend\\CMSProjectStrapiFrontend\\wwwroot\\favicon.png",
-      "PackagePath": "staticwebassets\\favicon.png"
-    },
-    {
-      "Id": "C:\\Users\\sebgu\\Desktop\\Projekt_CMS\\Strapi\\CMSProjectStrapiFrontend\\CMSProjectStrapiFrontend\\wwwroot\\icon-192.png",
-      "PackagePath": "staticwebassets\\icon-192.png"
-    },
-    {
       "Id": "C:\\Users\\sebgu\\Desktop\\Projekt_CMS\\Strapi\\CMSProjectStrapiFrontend\\CMSProjectStrapiFrontend\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },

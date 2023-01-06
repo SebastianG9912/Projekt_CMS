@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UGSukrjr4b4G0R071/u0XhOP6xFHpX3BaMhR+fhE6pM=",
+  "Hash": "2Gys6DrQukdyYWlD4TDI5JHViNhvLzjDcDyVx4Lrlwc=",
   "Source": "CMSProjectStrapiFrontend",
   "BasePath": "/",
   "Mode": "Root",
@@ -7121,40 +7121,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
-    },
-    {
-      "Identity": "C:\\Users\\sebgu\\Desktop\\Projekt_CMS\\Strapi\\CMSProjectStrapiFrontend\\CMSProjectStrapiFrontend\\wwwroot\\favicon.png",
-      "SourceId": "CMSProjectStrapiFrontend",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sebgu\\Desktop\\Projekt_CMS\\Strapi\\CMSProjectStrapiFrontend\\CMSProjectStrapiFrontend\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "favicon.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\favicon.png"
-    },
-    {
-      "Identity": "C:\\Users\\sebgu\\Desktop\\Projekt_CMS\\Strapi\\CMSProjectStrapiFrontend\\CMSProjectStrapiFrontend\\wwwroot\\icon-192.png",
-      "SourceId": "CMSProjectStrapiFrontend",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sebgu\\Desktop\\Projekt_CMS\\Strapi\\CMSProjectStrapiFrontend\\CMSProjectStrapiFrontend\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "icon-192.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\icon-192.png"
     },
     {
       "Identity": "C:\\Users\\sebgu\\Desktop\\Projekt_CMS\\Strapi\\CMSProjectStrapiFrontend\\CMSProjectStrapiFrontend\\wwwroot\\index.html",
